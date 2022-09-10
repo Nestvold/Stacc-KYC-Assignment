@@ -24,8 +24,6 @@ const Form = ({ className }: any) => {
       console.log('Searching for roles', pepTarget)
       console.log(pepSearchRoles(pepTarget))
     }
-
-
   }
 
   return (
@@ -72,7 +70,10 @@ const Form = ({ className }: any) => {
         label={CMS.BUTTON}
         onClick={handleRequest}
       />
-      <p>{pepTarget} + {targetType}</p>
+      <div>
+        <p>{CMS.SEARCH}</p>
+        <p>{pepTarget}</p>
+      </div>
     </div>
   )
 }
@@ -88,6 +89,7 @@ export default styled(Form)`
     background-color: rgb(243, 241, 240);
 
     gap: 10px;
+    margin-bottom: 20px;
 
     .header {
         font-size: larger;
