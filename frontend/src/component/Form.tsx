@@ -5,24 +5,29 @@ import { CMS } from '../assets/db.json'
 import { pepSearchOrganization, pepSearchPerson, pepSearchRoles } from '../services/pepService'
 
 const Form = ({ className }: any) => {
-  const [pepTarget, setPepTarget] = useState('');
+  const [pepTarget, setPepTarget] = useState('Knut Arild Hareide');
   const [targetType, setTargetType] = useState('person');
 
 
-  const handleRequest = () => {
-    let response;
-    console.log('Her: ', targetType, pepTarget)
+  const handleRequest = async() => {
+    console.log('Searching for:', pepTarget, '(', targetType, ')')
+
     if (targetType == 'person') {
       console.log('Searching for person', pepTarget)
-      console.log(pepSearchPerson(pepTarget))
+      var data = await pepSearchPerson(pepTarget)
+      console.log(data)
     }
+
     if (targetType == 'buisness') {
       console.log('Searching for buisness', pepTarget)
-      console.log(pepSearchOrganization(pepTarget))
+      var data = await pepSearchOrganization(pepTarget)
+      console.log(data)
     }
+    
     if (targetType == 'roles') {
       console.log('Searching for roles', pepTarget)
-      console.log(pepSearchRoles(pepTarget))
+      var data = await pepSearchRoles(pepTarget)
+      console.log(data)
     }
   }
 
@@ -30,6 +35,7 @@ const Form = ({ className }: any) => {
     <div className={className}>
       <h1 className='header'>{CMS.TITLE}</h1>
       <input
+        className='inputField'
         type='text'
         required
         value={pepTarget}
@@ -84,25 +90,25 @@ export default styled(Form)`
     align-items: center;
     justify-content: center;
 
+    gap: 10px;
     width: 700px;
     height: 350px;
-    background-color: rgb(243, 241, 240);
-
-    gap: 10px;
     margin-bottom: 20px;
+    color: rgb(45, 44, 44);
+    background-color: rgb(243, 241, 240);
 
     .header {
         font-size: larger;
-        color: rgb(45, 44, 44);;
     }
 
     .radioContainer {
         display: flex;
         width: 200px;
-        justify-content: space-between;
+        justify-content: space-between; 
     }
 
     .inputField {
+        color: rgb(255, 255, 255);
         width: 200px;
         height: 25px;
         border-radius: 5px;
