@@ -1,8 +1,6 @@
-
-import { useState } from 'react'
 import styled from 'styled-components'
 
-const Button = ({ className, label, onClick }) => {
+const Button = ({ className, label, onClick }: any) => {
 
   return (
     <div className={className} onClick={onClick}>

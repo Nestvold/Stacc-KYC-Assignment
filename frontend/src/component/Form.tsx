@@ -1,20 +1,36 @@
 import { useState } from 'react'
 import Button from './Button'
 import styled from 'styled-components'
-import { TITLE, BUTTON, RADIO_BUTTON_1, RADIO_BUTTON_2 } from '../assets/content.json'
+import { CMS } from '../assets/db.json'
+import { pepSearchOrganization, pepSearchPerson, pepSearchRoles } from '../services/pepService'
 
-const Form = ({ className }) => {
+const Form = ({ className }: any) => {
   const [pepTarget, setPepTarget] = useState('');
   const [targetType, setTargetType] = useState('person');
 
 
   const handleRequest = () => {
-    console.log(targetType, pepTarget)
+    let response;
+    console.log('Her: ', targetType, pepTarget)
+    if (targetType == 'person') {
+      console.log('Searching for person', pepTarget)
+      console.log(pepSearchPerson(pepTarget))
+    }
+    if (targetType == 'buisness') {
+      console.log('Searching for buisness', pepTarget)
+      console.log(pepSearchOrganization(pepTarget))
+    }
+    if (targetType == 'roles') {
+      console.log('Searching for roles', pepTarget)
+      console.log(pepSearchRoles(pepTarget))
+    }
+
+
   }
 
   return (
     <div className={className}>
-      <h1 className='header'>{TITLE}</h1>
+      <h1 className='header'>{CMS.TITLE}</h1>
       <input
         type='text'
         required
@@ -31,7 +47,16 @@ const Form = ({ className }) => {
             defaultChecked={true}
             onChange={(e) => setTargetType(e.target.value)}
           />
-          {RADIO_BUTTON_1}
+          {CMS.RADIO_BUTTON_1}
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="searchType"
+            value="roles"
+            onChange={(e) => setTargetType(e.target.value)}
+          />
+          {CMS.RADIO_BUTTON_2}
         </label>
         <label>
           <input
@@ -40,11 +65,11 @@ const Form = ({ className }) => {
             value="buisness"
             onChange={(e) => setTargetType(e.target.value)}
           />
-          {RADIO_BUTTON_2}
+          {CMS.RADIO_BUTTON_3}
         </label>
       </div>
       <Button
-        label={BUTTON}
+        label={CMS.BUTTON}
         onClick={handleRequest}
       />
       <p>{pepTarget} + {targetType}</p>
