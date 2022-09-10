@@ -1,17 +1,54 @@
-import React from 'react'
+import { useState } from 'react'
 import Button from './Button'
 import styled from 'styled-components'
-import {TITLE_ENGLISH, BUTTON_ENGLISH} from '../assets/content.json'
+import { TITLE, BUTTON, RADIO_BUTTON_1, RADIO_BUTTON_2 } from '../assets/content.json'
 
 const Form = ({ className }) => {
-    return (
-        <div className={className}>
-            <h1 className='header'>{TITLE_ENGLISH}</h1>
-            <label>
-                <input className="inputField" name="inputField"></input>
-            </label>
-            <Button label={BUTTON_ENGLISH}/>    
-        </div>
+  const [pepTarget, setPepTarget] = useState('');
+  const [targetType, setTargetType] = useState('person');
+
+
+  const handleRequest = () => {
+    console.log(targetType, pepTarget)
+  }
+
+  return (
+    <div className={className}>
+      <h1 className='header'>{TITLE}</h1>
+      <input
+        type='text'
+        required
+        value={pepTarget}
+        onChange={(e) => setPepTarget(e.target.value)}
+      />
+
+      <div className='radioContainer'>
+        <label>
+          <input
+            type="radio"
+            name="searchType"
+            value="person"
+            defaultChecked={true}
+            onChange={(e) => setTargetType(e.target.value)}
+          />
+          {RADIO_BUTTON_1}
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="searchType"
+            value="buisness"
+            onChange={(e) => setTargetType(e.target.value)}
+          />
+          {RADIO_BUTTON_2}
+        </label>
+      </div>
+      <Button
+        label={BUTTON}
+        onClick={handleRequest}
+      />
+      <p>{pepTarget} + {targetType}</p>
+    </div>
   )
 }
 
@@ -30,6 +67,12 @@ export default styled(Form)`
     .header {
         font-size: larger;
         color: rgb(45, 44, 44);;
+    }
+
+    .radioContainer {
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
     }
 
     .inputField {

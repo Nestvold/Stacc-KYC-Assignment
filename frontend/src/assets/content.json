@@ -1,7 +1,6 @@
 {
-    "TITLE_ENGLISH" : "Get to know your customer",
-    "TITLE_NORWEGIAN" : "Bli kjent med kunden",
-
-    "BUTTON_ENGLISH" : "Search",
-    "BUTTON_NORWEGIAN" : "Søk"
+  "TITLE": "Get to know your customer",
+  "BUTTON": "Search",
+  "RADIO_BUTTON_1": "Name",
+  "RADIO_BUTTON_2": "Buisness"
 }
