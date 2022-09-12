@@ -1,5 +1,5 @@
 from datetime import datetime
-from MongoDB import insert_DB
+from MongoDB import insert_db
 
 def from_csv_to_json(filename):
     objects = []
@@ -40,6 +40,7 @@ def from_csv_to_json(filename):
 
 def populate_db(fileName):
     data = from_csv_to_json(fileName)
-    insert_DB(data)
+    insert_db(data)
 
+# Populate db with the initial pep file, do not re-run !!!
 # populate_db('pep')

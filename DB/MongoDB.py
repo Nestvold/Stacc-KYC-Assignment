@@ -16,7 +16,7 @@ def connect_to_db():
     return client
 
 
-def insert_DB(data):
+def insert_db(data):
     client = connect_to_db()
     db = client['PEP-DB']
     collection = db['PEP-STORAGE']
