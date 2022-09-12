@@ -1,17 +1,39 @@
 import Form from './component/Form';
-import './App.css';
-import Accordion from './component/Accordion';
+import styled from 'styled-components';
 
-export const App = () => {
+export const App = ({ className }: any) => {
 
   return (
-    <div className="App">
+    <div className={className}>
       <div>
         <Form />
-        <Accordion />
       </div>
     </div>
   )
 }
 
-export default App
+export default styled(App)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1280px;
+  text-align: center;
+  position: relative;
+
+  /* CSS moved from index.css */
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
+`
