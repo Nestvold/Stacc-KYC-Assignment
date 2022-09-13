@@ -94,7 +94,7 @@ export default styled(Form)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    margin-top: 100px;
 
 
     gap: 10px;

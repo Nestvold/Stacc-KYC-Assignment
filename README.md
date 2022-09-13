@@ -45,8 +45,8 @@ I decided to use FIGMA as the design tool of my choice. By making components, de
 
 ### Database
 1. Install pymongo: `python3 -m pip install pymongo`
-2. Add your IP-address to known ip addresses on: https://cloud.mongodb.com/
-3. Automaticly connect to db
+2. ~~Add your IP-address to known ip addresses on: https://cloud.mongodb.com/~~
+3. Automaticly connect to db through backend
 
 
 ## Comments

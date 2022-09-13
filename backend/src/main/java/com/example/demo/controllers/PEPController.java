@@ -27,7 +27,7 @@ public class PEPController {
 
     @GetMapping(path = "/pep/{name}")
     public ResponseEntity fetchProfilesByName(@PathVariable String name) {
-        Optional<List<PersonProfile>> profiles = personProfileRepository.find(name);
+        Optional<List<PersonProfile>> profiles = personProfileRepository.findProfileByName(name);
         //Optional<List<PersonProfile>> profiles = personProfileRepository.findProfileByName(name);
 
         if (profiles.isPresent()) {
