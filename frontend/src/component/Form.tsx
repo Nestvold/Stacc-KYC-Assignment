@@ -37,7 +37,7 @@ const Form = ({ className }: any) => {
     <div className={className}>
       <h1 className='header'>{CMS.TITLE}</h1>
       <input
-        className='inputField'
+        className='Field'
         type='text'
         required
         value={pepTarget}
@@ -118,6 +118,7 @@ export default styled(Form)`
 
     .inputField {
         color: rgb(45, 45, 45);
+        background-color: rgb(245, 240, 240);;
         width: 200px;
         height: 25px;
         border-radius: 5px;

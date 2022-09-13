@@ -1,6 +1,7 @@
 from datetime import datetime
 from MongoDB import insert_db
 
+
 def from_csv_to_json(filename):
     objects = []
 
@@ -16,7 +17,7 @@ def from_csv_to_json(filename):
 
         # Creating a PEP-target
         pep_target = {
-            'id': data[0],
+            '_id': data[0],
             'schema': data[1],
             'name': data[2],
             'aliases': data[3],

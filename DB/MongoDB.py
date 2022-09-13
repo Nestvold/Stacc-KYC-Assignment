@@ -18,7 +18,7 @@ def connect_to_db():
 
 def insert_db(data):
     client = connect_to_db()
-    db = client['PEP-DB']
-    collection = db['PEP-STORAGE']
-
+    db = client['Profiles']
+    collection = db['Persons']
+    print(f'Populating the database {db} : {collection}')
     collection.insert_many(data)

@@ -3,7 +3,7 @@
 
 ## Assignment description
 
-Started by brainstorming and doing some scetches. After some time I decided that a visual architecture would help. By using **Lucidcharts** i manage to draw a arcitecture.
+Started by brainstorming and doing some scetches. After some time I decided that a visual architecture would help. By using **Lucidcharts** I managed to draw an arcitecture.
 
 ![Arcitecture](assets/Arcitecture.png)
 
