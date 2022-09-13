@@ -16,9 +16,9 @@ export default styled(App)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1280px;
+  justify-content: center;
   text-align: center;
-  position: relative;
+
 
   /* CSS moved from index.css */
   font-size: 16px;
@@ -27,7 +27,6 @@ export default styled(App)`
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -5,8 +5,12 @@ axios.defaults.baseURL = 'http://localhost:8080/api/pep/'
 
 export async function pepSearchPerson(name: string) {
   try {
-    const { data: response } = await axios.get(name)
+    const { data: response } = await axios.get(name) 
     return response
+  {/*
+    const { data: response } = await axios.get("pep?name=" + name)
+    return response.hits
+  */ }
   } catch (error) {
     console.log(error)
   }

@@ -6,14 +6,14 @@ def from_csv_to_json(filename):
     objects = []
 
     # Opening the file
-    f = open(f'DB\data\{filename}.csv', 'r', encoding='UTF-8')
+    f = open(f'DB/data/{filename}.csv', 'r', encoding='UTF-8')
     # Reading the file
     content = f.readlines()
 
     # Skipping the first line with [1:]
     for line in content[1:]:
-        line = line.replace('"', '')
-        data = line.split(sep=',')
+        data = line.split(sep='",')
+        data = [x.replace('"', '') for x in data]
 
         # Creating a PEP-target
         pep_target = {
@@ -43,5 +43,6 @@ def populate_db(fileName):
     data = from_csv_to_json(fileName)
     insert_db(data)
 
+
 # Populate db with the initial pep file, do not re-run !!!
-# populate_db('pep')
+populate_db('pep')
