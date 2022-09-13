@@ -3,6 +3,8 @@
 
 ## Assignment description
 
+I did a fullstack approach, frontend (React + acios), backend (java + spring framework) and a cloud based storage in MongoDB. 
+
 Started by brainstorming and doing some scetches. After some time I decided that a visual architecture would help. By using **Lucidcharts** I managed to draw an arcitecture.
 
 ![Arcitecture](assets/Arcitecture.png)
