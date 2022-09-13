@@ -1,11 +1,12 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://code-challenge.stacc.dev/api/'
+axios.defaults.baseURL = 'http://localhost:8080/api/pep/'
+{/* axios.defaults.baseURL = 'https://code-challenge.stacc.dev/api/' */}
 
 export async function pepSearchPerson(name: string) {
   try {
-    const { data: response } = await axios.get('pep?name=' + name)
-    return response.hits
+    const { data: response } = await axios.get(name)
+    return response
   } catch (error) {
     console.log(error)
   }

@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface PersonProfileRepository extends MongoRepository<PersonProfile, String> {
 
     @Query("{name: '?0'}")
-    List<PersonProfile> findPersonProfileByName(String name);
+    Optional<List<PersonProfile>> findProfileByName(String name);
 
 }
