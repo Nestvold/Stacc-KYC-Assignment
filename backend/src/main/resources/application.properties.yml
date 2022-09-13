@@ -1,7 +1,0 @@
-spring:
-    datasource:
-        username: "admin"
-        password: "Q7Qu9hAgUzMeVnU4"
-        uri: "mongodb+srv://<username>:<password>@pep-storage.o8fzdeu.mongodb.net/?retryWrites=true&w=majority"
-        database: "PEP-DB"
-        collection: "PEP-STORAGE"

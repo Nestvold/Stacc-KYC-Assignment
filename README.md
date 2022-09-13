@@ -40,7 +40,8 @@ I decided to use FIGMA as the design tool of my choice. By making components, de
 ### Backend
 1. Build Project 
 2. Navigate to `backend/src/main/java/com/example/demo/TestApplication.java`
-3. Run `main()`
+  1. Install dependencies: `mvn clean install`
+  2. Run project: `mvn spring-boot:run`
 
 ### Database
 1. Install pymongo: `python3 -m pip install pymongo`

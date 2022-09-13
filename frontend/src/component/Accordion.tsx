@@ -1,6 +1,5 @@
 
 import styled from 'styled-components'
-import { FcOk, FcHighPriority } from "react-icons/fc";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { CMS } from '../assets/db.json'
 import { SetStateAction, useState } from 'react';

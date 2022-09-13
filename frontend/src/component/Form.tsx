@@ -50,6 +50,7 @@ const Form = ({ className }: any) => {
             type="radio"
             name="searchType"
             value="person"
+            disabled={false}
             defaultChecked={true}
             onChange={(e) => setTargetType(e.target.value)}
           />
@@ -60,6 +61,7 @@ const Form = ({ className }: any) => {
             type="radio"
             name="searchType"
             value="roles"
+            disabled={true}
             onChange={(e) => setTargetType(e.target.value)}
           />
           {CMS.RADIO_BUTTON_2}
@@ -69,6 +71,7 @@ const Form = ({ className }: any) => {
             type="radio"
             name="searchType"
             value="buisness"
+            disabled={true}
             onChange={(e) => setTargetType(e.target.value)}
           />
           {CMS.RADIO_BUTTON_3}
